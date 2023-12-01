@@ -3,8 +3,8 @@
 
 const gift = ["zselés", "kókuszos", "vajkaramellás", "kakaós", "málnás"];
 const months = ["Január", "Február", "Március", "Április", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"];
-let main = document.querySelector(".container");
-let section = document.querySelector(".row");
+let body = document.querySelector("#body");
+// let section = document.querySelector(".row");
 let month = 11;
 // teszt new Date("2023-12-01");
 let today = new Date();
@@ -57,6 +57,11 @@ function templateDays(remainingDays, day, today) {
     }
 }
 
+// kiíratás módja még képlékeny
+body.innerHTML += `<header class="header"><h1>Adventi Kalendárium</h1></header><main class="container"><section class="row">`;
+
+let section = document.querySelector(".row");
+
 // legenerálja a dobozokat és az azokat tartalmazó feliratokat
 for(let i = 1; i < 25; i++) {
     let day = adventDay(months, month, i);
@@ -66,10 +71,12 @@ for(let i = 1; i < 25; i++) {
         <article class="col">
             <div class="card">
                 <div class="card-inner">
-                    <div class="card-front">${months[m]} ${d}</div>
-                    <div class="card-back" id="card-key-${i}" data-card="${templateDays(remainingDays, day, today)}" onclick="test('#card-key-${i}', gift)">${templateDays(remainingDays, day, today)}</div>
+                    <div class="card-content card-front">${months[m]} ${d}</div>
+                    <div class="card-content card-back" id="card-key-${i}" data-card="${templateDays(remainingDays, day, today)}" onclick="test('#card-key-${i}', gift)">${templateDays(remainingDays, day, today)}</div>
                 </div>
             </div>
         </article>
     `;
 }
+
+body.innerHTML += `</section></main><footer class="footer"><p>2023 &copy;</p>Copyright Reserved</footer>`;
