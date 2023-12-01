@@ -3,15 +3,42 @@
 }
 
 html, body {
-    height: 100%;
     padding: 0;
     margin: 0;
+}
+
+.header {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #da291c;
+    background-image: url("../img/header/toa-heftiba-sweet-pastries-on-black-ceramic-plate-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #dfdfdf;
+}
+
+.footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    background: #84754e;
+    color: #dfdfdf;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr;
     padding: 2rem;
+    background: #00843d;
+    background-image: url("../img/main/morgane-le-breton-green-christmas-tree-with-string-lights-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .col {
@@ -25,11 +52,7 @@ html, body {
     width: 100%;
     height: 100px;
     max-width: 400px;
-    text-align: center;
-    padding: 2rem 1rem;
-    border: 1px solid transparent;
-    background-color: rgba(255, 12, 25, .9);
-    color: blanchedalmond;
+    color: #dfdfdf;
     font-size: 1.5rem;
     perspective: 400px;
 }
@@ -48,14 +71,26 @@ html, body {
     cursor: pointer;
 }
 
-.card-front, .card-back {
+.card-content {
     position: absolute;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: .5rem solid #da291c;
+    border-radius: 1rem 1rem 0 0;
     backface-visibility: hidden;
 }
 
+.card-front {
+    background: #da291c;
+}
+
 .card-back {
+    background: #84754e;
+    border-bottom: none;
     transform: rotateY(180deg);
 }
 
